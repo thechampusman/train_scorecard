@@ -6,7 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ScoreProvider with ChangeNotifier {
     Map<String, dynamic> formData = {};
   Map<String, dynamic> coachData = {};
-  // Map<CoachNo, Map<Area, Score>>
   final Map<String, Map<String, int>> _scores = {};
   final Map<String, Map<String, String>> _remarks = {};
   void initializeCoach(String coach) {

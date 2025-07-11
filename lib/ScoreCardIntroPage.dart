@@ -51,7 +51,7 @@ class _ScoreCardIntroPageState extends State<ScoreCardIntroPage>
       totalCoachesController.text = formData['Total Coaches'] ?? '';
       totalScoreController.text = formData['Total Score Obtained (%)'] ?? '';
       inaccessibleAreasController.text = formData['Inaccessible Areas Count'] ?? '';
-      // Optionally restore inspectionDate if you save it as a string
+
       setState(() {});
     });
     Provider.of<ScoreProvider>(context, listen: false).restoreFromPrefs();
@@ -88,7 +88,7 @@ setupConnectivityListener();
     return AnimatedBuilder(
       animation: _animationController,
       builder: (context, child) {
-        // Animate gradient stops for a liquid effect
+ 
         final t = _animationController.value;
         return Container(
           decoration: BoxDecoration(
@@ -134,11 +134,11 @@ setupConnectivityListener();
             ),
             body: Center(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.all(8), // Less padding
+                padding: const EdgeInsets.all(8), 
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(18), // Less border radius
+                  borderRadius: BorderRadius.circular(18), 
                   child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16), // Less blur
+                    filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16), 
                     child: Container(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -164,7 +164,7 @@ setupConnectivityListener();
                           ),
                         ],
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8), // Less padding
+                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8), 
                       child: Form(
                         key: _formKey,
                         child: Column(
@@ -247,7 +247,7 @@ setupConnectivityListener();
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(16),
                                           ),
-                                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16), // Increased horizontal padding
+                                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16), 
                                         ),
                                         onPressed: () {
                                           Navigator.push(
@@ -272,7 +272,7 @@ setupConnectivityListener();
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(16),
                                           ),
-                                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16), // Increased horizontal padding
+                                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16), 
                                         ),
                                         onPressed: () {
                                           if (_formKey.currentState!.validate()) {
@@ -329,7 +329,7 @@ setupConnectivityListener();
                             Padding(
                               padding:  EdgeInsets.only(bottom: 20),
                               child: SizedBox(
-                                  width: double.infinity, // Makes the button as wide as possible
+                                  width: double.infinity,
                                   child: ElevatedButton.icon(
                                     icon: Icon(Icons.train, color: Colors.blue[700]),
                                     style: ElevatedButton.styleFrom(
@@ -340,7 +340,7 @@ setupConnectivityListener();
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(16),
                                       ),
-                                      padding: const EdgeInsets.symmetric(vertical: 18), // Taller for easier tap
+                                      padding: const EdgeInsets.symmetric(vertical: 18),
                                     ),
                                     onPressed: () {
                                       Navigator.push(

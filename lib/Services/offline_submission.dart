@@ -14,7 +14,7 @@ Future<void> tryUploadPendingSubmission() async {
   if (pending != null) {
     final data = jsonDecode(pending);
     final response = await http.post(
-      Uri.parse('https://webhook.site/5b2896ee-1ad2-453c-947b-95ab4ceaf68a'), // <-- Replace with your actual URL
+      Uri.parse('https://webhook.site/5b2896ee-1ad2-453c-947b-95ab4ceaf68a'), 
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode(data),
     );
@@ -25,7 +25,7 @@ Future<void> tryUploadPendingSubmission() async {
 }
 void setupConnectivityListener() {
   Connectivity().onConnectivityChanged.listen((List<ConnectivityResult> results) {
-    // Use the last result as the current connectivity status
+
     if (results.isNotEmpty && results.last != ConnectivityResult.none) {
       tryUploadPendingSubmission();
     }

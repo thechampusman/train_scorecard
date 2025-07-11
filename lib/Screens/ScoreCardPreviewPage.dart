@@ -62,7 +62,7 @@ class ScoreCardPreviewPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    // Section 1: Main Form Data Table
+     
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.35),
@@ -106,7 +106,7 @@ class ScoreCardPreviewPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
 
-                    // Section 2: Coach Scores Matrix Table
+     
                     Text(
                       'Coach Scores',
                       style: GoogleFonts.poppins(
@@ -152,7 +152,7 @@ class ScoreCardPreviewPage extends StatelessWidget {
                       ),
                     ),
 
-                    // Section 3: Remarks List
+         
                     const SizedBox(height: 24),
                     Text(
                       'Remarks',
@@ -232,14 +232,16 @@ onPressed: () async {
       Provider.of<ScoreProvider>(context, listen: false).clearSaved();
       onSubmit();
     } else {
-      // Save for later upload
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to submit: ${response.statusCode}')),
+      );
       await savePendingSubmission(submissionData);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Offline: Will upload when online.')),
       );
     }
   } catch (e) {
-    // Network error or offline: Save for later upload
+ 
     await savePendingSubmission(submissionData);
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Offline: Will upload when online.')),

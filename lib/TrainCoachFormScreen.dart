@@ -66,11 +66,11 @@ class _TrainCoachFormScreenState extends State<TrainCoachFormScreen> {
                 ),
                 body: Column(
                   children: [
-                    // Glassy Coach Selector
+            
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8), // Less vertical space
+                      padding: const EdgeInsets.symmetric(vertical: 8), 
                       child: SizedBox(
-                        height: 44, // Less height
+                        height: 44, 
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: coachList.length,
@@ -80,13 +80,13 @@ class _TrainCoachFormScreenState extends State<TrainCoachFormScreen> {
                               onTap: () => setState(() => selectedCoachIndex = index),
                               child: AnimatedContainer(
                                 duration: const Duration(milliseconds: 250),
-                                margin: const EdgeInsets.symmetric(horizontal: 4), // Less margin
-                                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6), // Less padding
+                                margin: const EdgeInsets.symmetric(horizontal: 4), 
+                                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                                 decoration: BoxDecoration(
                                   color: isSelected
                                       ? Colors.white.withOpacity(0.38)
                                       : Colors.white.withOpacity(0.14),
-                                  borderRadius: BorderRadius.circular(16), // Less radius
+                                  borderRadius: BorderRadius.circular(16), 
                                   border: Border.all(
                                     color: isSelected
                                         ? Colors.blueAccent.withOpacity(0.5)
@@ -117,7 +117,7 @@ class _TrainCoachFormScreenState extends State<TrainCoachFormScreen> {
                                             ? Colors.blueAccent
                                             : Colors.blueGrey[700],
                                         fontWeight: FontWeight.w600,
-                                        fontSize: 14, // Smaller font
+                                        fontSize: 14, 
                                       ),
                                     ),
                                   ],
@@ -128,7 +128,7 @@ class _TrainCoachFormScreenState extends State<TrainCoachFormScreen> {
                         ),
                       ),
                     ),
-                    // Glassmorphic Coach Form
+                 
                     Expanded(
                       child: AnimatedSwitcher(
                         duration: const Duration(milliseconds: 350),
@@ -149,7 +149,7 @@ class _TrainCoachFormScreenState extends State<TrainCoachFormScreen> {
   }
 }
 
-// --- CoachForm with glassmorphism card for each area ---
+
 class CoachForm extends StatelessWidget {
   final String coachNo;
   const CoachForm({required this.coachNo, Key? key}) : super(key: key);
