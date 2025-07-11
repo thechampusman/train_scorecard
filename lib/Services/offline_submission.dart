@@ -14,7 +14,7 @@ Future<void> tryUploadPendingSubmission() async {
   if (pending != null) {
     final data = jsonDecode(pending);
     final response = await http.post(
-      Uri.parse('https://webhook.site/5b2896ee-1ad2-453c-947b-95ab4ceaf68a'), 
+      Uri.parse('https://webhook.site/'), 
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode(data),
     );
